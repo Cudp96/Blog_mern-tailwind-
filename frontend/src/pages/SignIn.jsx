@@ -70,7 +70,7 @@ const SiginIn = () => {
             className="flex flex-col gap-4 justify-center"
             onSubmit={handleSubmit}
           >
-            <p className="text-center text-sm text-slate-900">
+            <p className="text-center text-sm ">
               You can sigin Using Google Account also.
             </p>
             <div>

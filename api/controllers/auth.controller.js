@@ -91,7 +91,7 @@ export const googleAuth = async (req, res, next) => {
           Math.random().toString(9).slice(-3),
         email,
         password: hashedPassword,
-        profilePicture: googlePhotoUrl,
+        photoProfile: googlePhotoUrl,
       });
       await newUser.save();
       const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);

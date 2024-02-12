@@ -5,8 +5,11 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Header";
 import FooterComponent from "./components/Footer";
+import PrivateRoute from "./components/PrivateRoute";
+import Profile from "./components/Profile";
 
 const App = () => {
   return (
@@ -18,6 +21,10 @@ const App = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
       <FooterComponent />
     </BrowserRouter>
