@@ -10,6 +10,8 @@ import Navbar from "./components/Header";
 import FooterComponent from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute";
 import Profile from "./components/Profile";
+import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute'
+import CreatePost from "./pages/CreatePost";
 
 const App = () => {
   return (
@@ -24,6 +26,9 @@ const App = () => {
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
+        </Route>
+        <Route element={<OnlyAdminPrivateRoute />}>
+          <Route path="/create-post" element={<CreatePost />} />
         </Route>
       </Routes>
       <FooterComponent />
