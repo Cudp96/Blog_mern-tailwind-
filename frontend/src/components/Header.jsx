@@ -19,7 +19,9 @@ const Header = () => {
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
   const { currentUser } = useSelector((state) => state.user);
-  const handleSignout = async () => {
+
+  const handleSignout = async (e) => {
+    e.preventDefault();
     try {
       const res = await fetch('/api/user/signout', {
         method: 'POST',
