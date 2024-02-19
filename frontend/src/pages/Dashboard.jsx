@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Profile from "../components/Profile";
 import DashSideBar from "../components/DashSideBar";
 import DashPosts from "../components/DashPosts";
+import DashUsers from "../components/DashUsers";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const Dashboard = () => {
       </div>
       {tab === "profile" && <Profile />}
       {tab === "posts" && <DashPosts />}
+      {tab === "users" && <DashUsers />}
     </div>
   );
 };
