@@ -62,7 +62,6 @@ export const signIn = async (req, res, next) => {
       .status(200)
       .cookie("access_token", token, { httpOnly: true })
       .json(rest);
-    cons;
   } catch (error) {
     next(error);
   }
@@ -71,7 +70,7 @@ export const googleAuth = async (req, res, next) => {
   const { email, name, googlePhotoUrl } = req.body;
 
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).exec();
     if (user) {
       const token = jwt.sign(
         { id: user._id, isAdmin: user.isAdmin },
